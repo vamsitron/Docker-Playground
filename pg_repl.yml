@@ -1,0 +1,21 @@
+name: pg_repl
+services:
+  db1:
+    image: postgres:latest
+    restart: always
+    hostname: db1
+    ports:
+      - "8001:5432"
+    shm_size: 2gb
+    environment:
+      POSTGRES_PASSWORD: unkeysto
+
+  db2:
+    image: postgres:latest
+    restart: always
+    hostname: db2
+    ports:
+      - "8002:5432"
+    shm_size: 2gb
+    environment:
+      POSTGRES_PASSWORD: unkeysto
