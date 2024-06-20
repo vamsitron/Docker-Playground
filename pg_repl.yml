@@ -6,6 +6,8 @@ services:
     hostname: db1
     ports:
       - "8001:5432"
+    volumes:
+      - vol1:/var/lib/postgresql
     shm_size: 2gb
     environment:
       POSTGRES_PASSWORD: unkeysto
@@ -16,6 +18,12 @@ services:
     hostname: db2
     ports:
       - "8002:5432"
+    volumes:
+      - vol2:/var/lib/postgresql
     shm_size: 2gb
     environment:
       POSTGRES_PASSWORD: unkeysto
+
+volumes:
+  vol1:
+  vol2:
